@@ -1,0 +1,3 @@
+[dtn_nodes]
+dtn.example.com ansible_user=ansible
+ernz2019-dtn.australiasoutheast.cloudapp.azure.com ansible_user=azureuser

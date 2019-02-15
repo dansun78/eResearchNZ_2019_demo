@@ -1,0 +1,9 @@
+- name: 1.Import the RPM GPG KEY
+  rpm_key:
+    state: present
+    key: https://downloads.globus.org/toolkit/gt6/stable/repo/rpm/RPM-GPG-KEY-Globus
+
+- name: 2.Install the Globus repo a remote repo
+  yum:
+    name: https://downloads.globus.org/toolkit/globus-connect-server/globus-connect-server-repo-latest.noarch.rpm
+    state: present

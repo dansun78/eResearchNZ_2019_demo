@@ -1,0 +1,21 @@
+---
+
+- hosts: dtn_nodes
+  become: yes
+  vars_files:
+    - vars/secret.yml
+    - vars/epel.yml
+
+  tasks:
+    - name: Install Apache HTTP Server
+      include: tasks/install_httpd.yml
+    - name: Install Globus repo
+      include: tasks/add_globus_repo.yml
+    - name: Install EPEL repo
+      include: tasks/add_epel_repo.yml
+    - name: Install the Globus Connect Server package from the repo
+      include: tasks/install_globus_connect_server_package.yml
+    - name: Copy the configuration template to the target host
+      include: tasks/copy_conf_templates.yml
+    - name: Create Globus endpoint and register it against Globus
+      include: tasks/create_globus_endpoint.yml

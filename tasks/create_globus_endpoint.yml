@@ -1,0 +1,3 @@
+- name: Setup a Globus endpoint and register it
+  shell: globus-connect-server-setup -s
+  when: create_endpoint is defined and create_endpoint == true

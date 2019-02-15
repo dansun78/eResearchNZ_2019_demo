@@ -1,0 +1,6 @@
+- name: 1. Copy Globus Connect Server configuration files to the target host
+  template:
+    src=templates/globus-connect-server.conf.j2 
+    dest=/etc/globus-connect-server.conf
+    mode=0600
+    backup=yes

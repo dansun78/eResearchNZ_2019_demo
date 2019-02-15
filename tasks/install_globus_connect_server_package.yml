@@ -1,0 +1,8 @@
+- name: Install yum-plugin-priorities package
+  yum:
+    name: yum-plugin-priorities
+    state: present
+- name: Install Globus Connect Server package from the Globus repo
+  yum:
+    name: globus-connect-server
+    state: present
